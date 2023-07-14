@@ -3,8 +3,13 @@ import { css } from "@emotion/react";
 export const globalStyles = css`
   * {
     margin: 0;
-    box-sizing: border-box;
-    font-size: 20px;
+    padding: 0;
     font-family: "myfont";
+    box-sizing: border-box;
+    font-family: "myfont";
+  }
+  @font-face {
+    font-family: "myfont";
+    src: url("/font/BacasimeAntique-Regular.ttf");
   }
 `;

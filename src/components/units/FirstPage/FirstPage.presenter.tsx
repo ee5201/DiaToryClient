@@ -1,38 +1,43 @@
 import * as S from "./FirstPage.styles";
-import { MenuOutlined, UnorderedListOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 export default function FirstPresenter(props) {
   return (
     <S.Body>
       <S.Wrapper>
         <S.Container>
           <S.Nav>
-            <S.NavImg src="images/Logo.png" />
-            {props.ItemBox.map((el, index) => (
-              <S.ContentsItemWrapper key={index}>
-                <S.ContentsItemLi>
-                  <S.ContentsItemLia href="">{el.name}</S.ContentsItemLia>
-                </S.ContentsItemLi>
-              </S.ContentsItemWrapper>
-            ))}
-            {/* <S.LoginWrapper>
-              <S.LoginItemWrapper>
-                <S.LoginItemLi>
-                  <S.LoginItemLia>SingUp</S.LoginItemLia>
-                </S.LoginItemLi>
-                <S.LoginItemLi>
-                  <S.LoginItemLia>Login</S.LoginItemLia>
-                </S.LoginItemLi>
-              </S.LoginItemWrapper>
-            </S.LoginWrapper> */}
-            <S.AntBar>
+            <S.NavLogo src="images/Logo.png" />
+            <S.NavUl AskOpen={props.AskOpen}>
+              <S.NavLi>
+                <S.Nava>홈</S.Nava>
+              </S.NavLi>
+              <S.NavLi>
+                <S.Nava>서비스</S.Nava>
+              </S.NavLi>
+              <S.NavLi>
+                <S.Nava>고객센터</S.Nava>
+              </S.NavLi>
+              <S.NavLi>
+                <S.Nava>로그인</S.Nava>
+              </S.NavLi>
+              <S.NavLi>
+                <S.Nava>회원가입</S.Nava>
+              </S.NavLi>
+              <S.AntBar>
+                <CloseOutlined onClick={props.OnClickCloseMenu} />
+              </S.AntBar>
+            </S.NavUl>
+            <S.AntMenu onClick={props.OnClickOpenMenu}>
               <MenuOutlined />
-            </S.AntBar>
+            </S.AntMenu>
           </S.Nav>
+
           <S.TitleWrapperdiv>
-            <p>DiaTory</p>
+            <S.Titlep>DiaTory</S.Titlep>
             <S.TitleWrapperH1>
-              This is a <S.TitleWrapperspan>DiaTory</S.TitleWrapperspan>
-              <br /> you can write your day record here
+              This is <S.TitleWrapperspan>DiaTory</S.TitleWrapperspan>
+              <br />
+              당신의 추억을 사진과 함께 기록해 보세요
             </S.TitleWrapperH1>
           </S.TitleWrapperdiv>
         </S.Container>
@@ -93,7 +98,7 @@ export default function FirstPresenter(props) {
         <S.Container>
           <S.ThirdRow id="row">
             <S.ThirdContentBox>
-              <S.ThirdContentTitle>What is DiaTory?</S.ThirdContentTitle>
+              <S.ThirdContentTitle>다양한 테마와 스티커</S.ThirdContentTitle>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Eligendi corrupti maiores hic velit esse laborum dolorem dicta

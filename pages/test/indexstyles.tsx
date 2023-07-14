@@ -39,7 +39,7 @@ export const NavUl = styled.ul`
   margin: 10px 20px;
   @media (max-width: 768px) {
     margin: 0;
-    right: ${(props) => (props.AskOpen ? "0" : "-200px")};
+    right: -200px
     top: 0;
     position: fixed;
     height: 50vh;
@@ -160,7 +160,7 @@ export const TitleWrapperspan = styled.span`
 export const DiaryWrapper = styled.div`
   padding: 80px 0;
   color: #ababab;
-  margin-top: 200px;
+  margin-top: 1000px;
   @media (max-width: 768px) {
     margin-top: 100px;
   }
@@ -211,8 +211,7 @@ export const DiaryContentTitle = styled.h1`
 export const SecondDiaryWrapper = styled.div`
   padding: 80px 0;
   color: #ababab;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 1000px;
   @media (max-width: 768px) {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -272,6 +271,7 @@ export const SecondDiarySubContentSpan = styled.span`
 export const ThirdWrapper = styled.div`
   padding: 80px 0;
   color: #ababab;
+  margin-top: 1000px;
 `;
 
 export const ThirdRow = styled.div`
