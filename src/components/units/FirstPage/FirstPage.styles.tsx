@@ -1,20 +1,26 @@
 import styled from "@emotion/styled";
 
 export const Body = styled.div`
-  background: #000;
+  background: rgba(24, 23, 23, 0.876);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   height: 100vh;
   background-image: linear-gradient(
-      to bottom,
-      rgba(231, 226, 226, 0.876),
+      to top,
+      rgba(24, 23, 23, 0.876),
       rgba(255, 255, 255, 0)
     ),
     url("images/backimage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 export const Container = styled.div`
@@ -46,11 +52,7 @@ export const NavUl = styled.ul`
     width: 200px;
     padding-top: 50px;
     border-radius: 5px;
-    background: linear-gradient(
-      to bottom,
-      rgba(107, 170, 233, 1),
-      rgba(107, 170, 233, 0)
-    );
+    background: linear-gradient(to bottom, #5f6264, rgba(107, 170, 233, 0));
     z-index: 2;
   }
 `;
@@ -158,9 +160,14 @@ export const TitleWrapperspan = styled.span`
 
 // ---------------!first Page what is DiaTory !----------------------------
 export const DiaryWrapper = styled.div`
-  padding: 80px 0;
+  padding: 20px 0;
   color: #ababab;
-  margin-top: 200px;
+  /* height: 100vh; */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  @media (min-width: 768px) {
+    margin-top: 500px;
+  }
   @media (max-width: 768px) {
     margin-top: 100px;
   }
@@ -209,10 +216,16 @@ export const DiaryContentTitle = styled.h1`
 
 // ------------!Write your Day styled!---------------
 export const SecondDiaryWrapper = styled.div`
-  padding: 80px 0;
+  padding: 30px 0;
   color: #ababab;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    margin-top: 500px;
+  }
   @media (max-width: 768px) {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -222,6 +235,7 @@ export const SecondDiaryContentBox = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 300px;
 `;
 export const SecondDiaryTItleH1 = styled.h1`
   font-size: 60px;
@@ -272,6 +286,12 @@ export const SecondDiarySubContentSpan = styled.span`
 export const ThirdWrapper = styled.div`
   padding: 80px 0;
   color: #ababab;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  @media (min-width: 768px) {
+    margin-top: 1000px;
+  }
 `;
 
 export const ThirdRow = styled.div`
@@ -315,5 +335,72 @@ export const ThirdContentTitle = styled.h1`
   @media (max-width: 768px) {
     font-size: 30px;
     margin-bottom: 10px;
+  }
+`;
+
+// ----------------------!Fourth 네번째!---------------------
+
+export const FourthDiaryWrapper = styled.div`
+  padding: 80px 0;
+  color: #ababab;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  @media (min-width: 768px) {
+    margin-top: 500px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+`;
+export const FourthDiaryContentBox = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 300px;
+`;
+export const FourthDiaryTItleH1 = styled.h1`
+  font-size: 60px;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+`;
+export const FourthDiaryTItleDay = styled.span`
+  color: #f1f1a1;
+  font-size: 60px;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+`;
+export const FourthDiaryTItleLife = styled.span`
+  color: #de9af3;
+  font-size: 60px;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+`;
+export const FourthDiarySubTitle = styled.span`
+  font-size: 60px;
+  margin-left: 160px;
+  @media (max-width: 768px) {
+    font-size: 40px;
+    margin-left: 0;
+  }
+`;
+export const FourthDiarySubContent = styled.p`
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 160px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+    margin-left: 45px;
+  }
+`;
+export const FourthDiarySubContentSpan = styled.span`
+  margin-left: 77px;
+  color: #db8d8d;
+  @media (max-width: 768px) {
+    margin-left: 57px;
   }
 `;
