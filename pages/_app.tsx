@@ -1,7 +1,7 @@
 import { Global } from "@emotion/react";
 import "../styles/globals.css";
-import { globalStyles } from "../src/common/styles/globalStyles";
 import ApolloSetting from "../src/components/common/apollo";
+import { globalStyles } from "../src/commons/styles/globalStyles";
 
 export default function App({ Component, pageProps }) {
   return (
