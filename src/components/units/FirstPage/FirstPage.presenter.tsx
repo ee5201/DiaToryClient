@@ -1,7 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "react-spring";
-import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
+
 import * as S from "./FirstPage.styles";
 
 export default function FirstPresenter(props) {
@@ -34,33 +34,6 @@ export default function FirstPresenter(props) {
     <S.Body>
       <S.Wrapper>
         <S.Container>
-          <S.Nav>
-            <S.NavLogo src="images/Logo.png" />
-            <S.NavUl AskOpen={props.AskOpen}>
-              <S.NavLi>
-                <S.Nava>홈</S.Nava>
-              </S.NavLi>
-              <S.NavLi>
-                <S.Nava>서비스</S.Nava>
-              </S.NavLi>
-              <S.NavLi>
-                <S.Nava>고객센터</S.Nava>
-              </S.NavLi>
-              <S.NavLi>
-                <S.Nava>로그인</S.Nava>
-              </S.NavLi>
-              <S.NavLi>
-                <S.Nava>회원가입</S.Nava>
-              </S.NavLi>
-              <S.AntBar>
-                <CloseOutlined onClick={props.OnClickCloseMenu} />
-              </S.AntBar>
-            </S.NavUl>
-            <S.AntMenu onClick={props.OnClickOpenMenu}>
-              <MenuOutlined />
-            </S.AntMenu>
-          </S.Nav>
-
           <S.TitleWrapperdiv>
             <S.Titlep>DiaTory</S.Titlep>
             <S.TitleWrapperH1>

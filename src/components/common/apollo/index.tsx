@@ -8,7 +8,7 @@ import { createUploadLink } from "apollo-upload-client";
 
 export default function ApolloSetting(props) {
   const uploadLink = createUploadLink({
-    uri: "",
+    uri: "http://localhost:3000/graphql",
   });
   const client = new ApolloClient({
     link: ApolloLink.from([uploadLink as inknown as ApolloLink]),
