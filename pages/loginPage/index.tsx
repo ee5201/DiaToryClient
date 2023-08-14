@@ -1,9 +1,9 @@
-import LoginPageContainer from "../../src/components/units/LoginPage/LoginPageContainer";
+import LoginPageUI from "../../src/components/units/LoginPageForm";
 
 export default function LoginPage() {
   return (
     <>
-      <LoginPageContainer />
+      <LoginPageUI />
     </>
   );
 }
