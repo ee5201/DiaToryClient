@@ -5,14 +5,17 @@ import useQueryFetchReviewComment from "src/components/common/hook/queries/useQu
 import { useRecoilState } from "recoil";
 import { FetchReviewBoardId } from "src/commons/stores";
 import ReviewCommentlistListUI from "./ReviewCommentlist";
+import { useRouter } from "next/router";
 export default function ReviewCommentlistUI() {
   const { data, fetchMore } = useQueryFetchReviewComment();
-  const [boardId] = useRecoilState(FetchReviewBoardId);
+  const router = useRouter();
   const onLoadMore = async () => {
+    if (data === undefined) return;
+    if (data?.fetchProductCart === undefined) return;
     await fetchMore({
       variables: {
-        page: Math.ceil((data?.fetchComments.length ?? 10) / 10) + 1,
-        boardId,
+        page: Math.ceil((data?.fetchComments.length ?? 5) / 5) + 1,
+        boardId: String(router.query.DetailID),
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult.fetchComments) {
@@ -29,7 +32,7 @@ export default function ReviewCommentlistUI() {
         return {
           fetchComments: [
             ...prev.fetchComments,
-            ...fetchMoreResult.fetchComments,
+            ...fetchMoreResult?.fetchComments,
           ],
         };
       },

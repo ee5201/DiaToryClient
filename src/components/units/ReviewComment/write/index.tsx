@@ -6,13 +6,13 @@ import ReviewCommentTextArea from "src/components/common/inputs/ReviewCommentTex
 import ReviewCommentSubmitButton from "src/components/common/hook/button/ReviewCommentSubmitButton";
 import { useRecoilState } from "recoil";
 import { StartRating } from "src/commons/stores";
-export default function ReviewCommentUI() {
+export default function ReviewCommentUI(props) {
   const [_, setValue] = useRecoilState(StartRating);
   return (
     <S.Wrapper>
       <S.Linethrough></S.Linethrough>
       <S.TitleBox>
-        <S.Title>댓글</S.Title>
+        <S.Title>{props.isEdit ? "수정" : "댓글"}</S.Title>
       </S.TitleBox>
       <S.InputBox>
         <ReviewCommentWriteInput />
@@ -23,7 +23,11 @@ export default function ReviewCommentUI() {
         <ReviewCommentTextArea />
         <S.BottomWrapper>
           <S.LineNumber>/100</S.LineNumber>
-          <ReviewCommentSubmitButton />
+          <ReviewCommentSubmitButton
+            isEdit={props.isEdit}
+            el={props.el}
+            setIsEdit={props.setIsEdit}
+          />
         </S.BottomWrapper>
       </S.InputContentBox>
     </S.Wrapper>
